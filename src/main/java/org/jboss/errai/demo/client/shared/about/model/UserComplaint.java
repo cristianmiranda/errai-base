@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.client.shared.index.model;
+package org.jboss.errai.demo.client.shared.about.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

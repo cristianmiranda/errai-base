@@ -11,7 +11,7 @@ package org.jboss.errai.demo.client.local.about;
 
 import org.jboss.errai.common.client.api.Caller;
 import org.jboss.errai.demo.client.local.common.mvp.PresenterTest;
-import org.jboss.errai.demo.client.shared.index.services.PrintService;
+import org.jboss.errai.demo.client.shared.about.services.PrintService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.server.index.dao;
+package org.jboss.errai.demo.server.about.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.jboss.errai.demo.client.shared.index.model.UserComplaint;
+import org.jboss.errai.demo.client.shared.about.model.UserComplaint;
 import org.jboss.errai.jpa.sync.client.shared.DataSyncService;
 import org.jboss.errai.jpa.sync.client.shared.JpaAttributeAccessor;
 import org.jboss.errai.jpa.sync.client.shared.SyncRequestOperation;
