@@ -18,11 +18,17 @@
         <javaee.version>1.0.2.Final</javaee.version>
         <errai.dev.context>${project.artifactId}</errai.dev.context>
         <as.version>8.1.0.Final</as.version>
+
         <!-- Add the absolute path for $JBOSS_HOME below to manage another instance -->
         <errai.jboss.home>${project.build.directory}/wildfly-${as.version}</errai.jboss.home>
+
         <!--Plugin versions-->
         <maven-failsafe-plugin.version>2.17</maven-failsafe-plugin.version>
         <maven-checkstyle-plugin.version>2.12.1</maven-checkstyle-plugin.version>
+
+        <!-- Testing dependencies -->
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
     </properties>
 
     <dependencyManagement>
@@ -44,18 +50,15 @@
             <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.jboss.errai</groupId>
             <artifactId>errai-javaee-all</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.jboss.errai</groupId>
             <artifactId>errai-cordova</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-7.0</artifactId>
@@ -63,26 +66,28 @@
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.errai</groupId>
+            <artifactId>errai-cdi-jboss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.errai</groupId>
+            <artifactId>errai-weld-integration</artifactId>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <version>${junit.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>org.jboss.errai</groupId>
-            <artifactId>errai-cdi-jboss</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.errai</groupId>
-            <artifactId>errai-weld-integration</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
         </dependency>
     </dependencies>
 
@@ -337,6 +342,12 @@
                 <dependency>
                     <groupId>junit</groupId>
                     <artifactId>junit</artifactId>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-all</artifactId>
+                    <version>${mockito.version}</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>

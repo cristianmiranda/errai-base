@@ -3,7 +3,7 @@ package org.jboss.errai.demo.client.local;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.jboss.errai.demo.client.local.index.pages.Index;
+import org.jboss.errai.demo.client.local.index.Index;
 import org.jboss.errai.enterprise.client.jaxrs.api.RestClient;
 import org.jboss.errai.ioc.client.api.EntryPoint;
 import org.slf4j.Logger;
