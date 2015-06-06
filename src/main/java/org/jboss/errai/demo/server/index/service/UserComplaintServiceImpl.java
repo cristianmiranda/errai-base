@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.server;
+package org.jboss.errai.demo.server.index.service;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
@@ -6,39 +6,40 @@ import javax.inject.Inject;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
-import org.jboss.errai.demo.client.shared.UserComplaint;
-import org.jboss.errai.demo.client.shared.UserComplaintEndpoint;
+import org.jboss.errai.demo.client.shared.index.model.UserComplaint;
+import org.jboss.errai.demo.client.shared.index.services.UserComplaintService;
+import org.jboss.errai.demo.server.index.dao.UserComplaintDao;
 
 /**
  * A stateless EJB implementing the REST endpoint to create, update and delete {@link UserComplaint}
  * objects.
  */
 @Stateless
-public class UserComplaintEndpointImpl implements UserComplaintEndpoint {
+public class UserComplaintServiceImpl implements UserComplaintService {
 
     @Inject
     private Event<UserComplaint> created;
 
     @Inject
-    private UserComplaintService complaintService;
+    private UserComplaintDao complaintDao;
 
     @Override
     public Response create(UserComplaint entity) {
-        complaintService.create(entity);
+        complaintDao.create(entity);
         created.fire(entity);
-        return Response.created(UriBuilder.fromResource(UserComplaintEndpoint.class)
+        return Response.created(UriBuilder.fromResource(UserComplaintService.class)
                 .path(String.valueOf(entity.getId())).build()).build();
     }
 
     @Override
     public Response update(Long id, UserComplaint entity) {
-        complaintService.update(id, entity);
+        complaintDao.update(id, entity);
         return Response.noContent().build();
     }
 
     @Override
     public Response delete(Long id) {
-        complaintService.delete(id);
+        complaintDao.delete(id);
         return Response.noContent().build();
     }
 }

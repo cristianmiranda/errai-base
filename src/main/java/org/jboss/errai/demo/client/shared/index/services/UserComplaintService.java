@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.client.shared;
+package org.jboss.errai.demo.client.shared.index.services;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -8,6 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
+import org.jboss.errai.demo.client.shared.index.model.UserComplaint;
+
 /**
  * This JAX-RS resource interface is used on both the client and the server. On
  * the server, it is implemented to expose the described resource methods as
@@ -16,7 +18,7 @@ import javax.ws.rs.core.Response;
  * request or serialization logic.
  */
 @Path("/usercomplaints")
-public interface UserComplaintEndpoint {
+public interface UserComplaintService {
     @POST
     @Consumes("application/json")
     Response create(UserComplaint entity);

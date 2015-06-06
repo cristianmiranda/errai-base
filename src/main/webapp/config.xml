@@ -1,31 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <preference name="loglevel" value="DEBUG" />
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG"/>
     <feature name="App">
-        <param name="android-package" value="org.apache.cordova.App" />
+        <param name="android-package" value="org.apache.cordova.App"/>
     </feature>
     <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
+        <param name="android-package" value="org.apache.cordova.device.Device"/>
     </feature>
     <feature name="Battery">
-        <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
+        <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
     </feature>
     <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
     </feature>
     <feature name="Accelerometer">
-        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener"/>
     </feature>
     <feature name="Compass">
-        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener"/>
     </feature>
-    <name>Errai Tutorial</name>
+    <name>Errai Base</name>
     <description>
-        An Errai tutorial.
+        An Errai Base project.
     </description>
-    <author email="errai-dev@lists.jboss.org" href="http://erraiframework.org">
-        Errai Dev Team
+    <author email="crism60@gmail.com" href="http://www.cristianmiranda.info">
+        Cristian Miranda
     </author>
-    <content src="index.html" />
-    <access origin="*" />
+    <content src="index.html"/>
+    <access origin="*"/>
 </widget>

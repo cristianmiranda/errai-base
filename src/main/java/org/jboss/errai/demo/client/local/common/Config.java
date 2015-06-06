@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.client.local;
+package org.jboss.errai.demo.client.local.common;
 
 import org.jboss.errai.bus.client.framework.Configuration;
 
