@@ -17,18 +17,16 @@ import javax.ws.rs.core.Response;
  */
 @Path("/usercomplaints")
 public interface UserComplaintEndpoint {
+    @POST
+    @Consumes("application/json")
+    Response create(UserComplaint entity);
 
-  @POST
-  @Consumes("application/json")
-  public Response create(UserComplaint entity);
+    @PUT
+    @Path("/{id:[0-9][0-9]*}")
+    @Consumes("application/json")
+    Response update(@PathParam("id") Long id, UserComplaint entity);
 
-  @PUT
-  @Path("/{id:[0-9][0-9]*}")
-  @Consumes("application/json")
-  public Response update(@PathParam("id") Long id, UserComplaint entity);
-
-  @DELETE
-  @Path("/{id:[0-9][0-9]*}")
-  public Response delete(@PathParam("id") Long id);
-
+    @DELETE
+    @Path("/{id:[0-9][0-9]*}")
+    Response delete(@PathParam("id") Long id);
 }

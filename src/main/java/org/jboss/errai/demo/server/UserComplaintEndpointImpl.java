@@ -16,30 +16,29 @@ import org.jboss.errai.demo.client.shared.UserComplaintEndpoint;
 @Stateless
 public class UserComplaintEndpointImpl implements UserComplaintEndpoint {
 
-  @Inject
-  private Event<UserComplaint> created;
+    @Inject
+    private Event<UserComplaint> created;
 
-  @Inject
-  private UserComplaintService complaintService;
+    @Inject
+    private UserComplaintService complaintService;
 
-  @Override
-  public Response create(UserComplaint entity) {
-    complaintService.create(entity);
-    created.fire(entity);
-    return Response.created(
-            UriBuilder.fromResource(UserComplaintEndpoint.class).path(String.valueOf(entity.getId())).build()).build();
-  }
+    @Override
+    public Response create(UserComplaint entity) {
+        complaintService.create(entity);
+        created.fire(entity);
+        return Response.created(UriBuilder.fromResource(UserComplaintEndpoint.class)
+                .path(String.valueOf(entity.getId())).build()).build();
+    }
 
-  @Override
-  public Response update(Long id, UserComplaint entity) {
-    complaintService.update(id, entity);
-    return Response.noContent().build();
-  }
+    @Override
+    public Response update(Long id, UserComplaint entity) {
+        complaintService.update(id, entity);
+        return Response.noContent().build();
+    }
 
-  @Override
-  public Response delete(Long id) {
-    complaintService.delete(id);
-    return Response.noContent().build();
-  }
-
+    @Override
+    public Response delete(Long id) {
+        complaintService.delete(id);
+        return Response.noContent().build();
+    }
 }
