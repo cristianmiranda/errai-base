@@ -2,7 +2,6 @@ package org.jboss.errai.demo.client.local.about;
 
 import javax.inject.Inject;
 
-import org.jboss.errai.demo.client.local.about.AboutPresenter.MyView;
 import org.jboss.errai.demo.client.local.common.mvp.View;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -28,7 +27,7 @@ import com.google.gwt.user.client.ui.Button;
  */
 @Page(role = DefaultPage.class, path = "About")
 @Templated("AboutView.html#root")
-public class AboutView extends View<AboutUiHandler> implements MyView {
+public class AboutView extends View<AboutUiHandler> implements AboutPresenter.MyView {
     @Inject
     @DataField
     private Button submit;
