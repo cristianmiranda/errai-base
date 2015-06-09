@@ -10,7 +10,6 @@ import org.jboss.errai.demo.client.local.common.Places;
 import org.jboss.errai.demo.client.local.common.mvp.HasUiHandler;
 import org.jboss.errai.demo.client.local.common.mvp.Presenter;
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
-import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
 import org.jboss.errai.demo.client.shared.about.services.PrintService;
 
@@ -21,14 +20,11 @@ public class AboutPresenter extends Presenter<AboutPresenter.MyView> implements 
         void alert(String response);
     }
 
-    private final PlaceManager placeManager;
     private final Caller<PrintService> printService;
 
     @Inject
     public AboutPresenter(
-            Caller<PrintService> printService,
-            PlaceManager placeManager) {
-        this.placeManager = placeManager;
+            Caller<PrintService> printService) {
         this.printService = printService;
     }
 
@@ -44,7 +40,7 @@ public class AboutPresenter extends Presenter<AboutPresenter.MyView> implements 
             public void callback(String response) {
                 PlaceRequest placeRequest = new PlaceRequest.Builder().to(Places.INDEX)
                         .with("Response", response).build();
-                placeManager.reveal(placeRequest);
+                getPlaceManager().reveal(placeRequest);
             }
         }).print();
     }

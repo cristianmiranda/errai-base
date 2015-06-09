@@ -5,6 +5,7 @@ import javax.inject.Inject;
 
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceCallbackHandler;
+import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;
 
 /**
  * @author Cristian Miranda
@@ -12,6 +13,8 @@ import org.jboss.errai.demo.client.local.common.mvp.places.PlaceCallbackHandler;
  */
 public abstract class Presenter<T extends HasUiHandler> extends PlaceCallbackHandler {
 
+    @Inject
+    private PlaceManager placeManager;
     @Inject
     private T view;
 
@@ -23,13 +26,8 @@ public abstract class Presenter<T extends HasUiHandler> extends PlaceCallbackHan
         return view;
     }
 
-    /**
-     * Only for test purposes
-     *
-     * @param view
-     */
-    public void setView(T view) {
-        this.view = view;
+    public PlaceManager getPlaceManager() {
+        return placeManager;
     }
 
     protected abstract IsPlace getPlace();

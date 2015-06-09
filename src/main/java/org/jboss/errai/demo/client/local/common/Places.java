@@ -19,7 +19,7 @@ public enum Places implements IsPlace {
         this.presenterClass = presenterClass;
     }
 
-    public Class<? extends Presenter> getPresenter(){
+    public Class<? extends Presenter> getPresenter() {
         return presenterClass;
     }
 }

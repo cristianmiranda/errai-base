@@ -23,7 +23,7 @@ public class PlaceRequest {
 
         public PlaceRequest.Builder with(String name, String value) {
             this.lazyInitializeParamMap();
-            if(value != null) {
+            if (value != null) {
                 this.params.put(name, value);
             }
 
@@ -31,7 +31,7 @@ public class PlaceRequest {
         }
 
         public PlaceRequest.Builder with(Map<String, String> params) {
-            if(params != null) {
+            if (params != null) {
                 this.lazyInitializeParamMap();
                 this.params.putAll(params);
             }
@@ -40,7 +40,7 @@ public class PlaceRequest {
         }
 
         public PlaceRequest.Builder without(String name) {
-            if(this.params != null) {
+            if (this.params != null) {
                 this.params.remove(name);
             }
 
@@ -48,10 +48,9 @@ public class PlaceRequest {
         }
 
         private void lazyInitializeParamMap() {
-            if(this.params == null) {
+            if (this.params == null) {
                 this.params = new LinkedHashMap();
             }
-
         }
 
         public PlaceRequest build() {
