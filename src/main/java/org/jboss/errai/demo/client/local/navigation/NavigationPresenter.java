@@ -1,6 +1,6 @@
 package org.jboss.errai.demo.client.local.navigation;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import org.jboss.errai.bus.client.api.messaging.Message;
@@ -13,7 +13,7 @@ import org.jboss.errai.demo.client.local.common.mvp.slots.RevealType;
 import org.jboss.errai.demo.client.local.common.mvp.slots.SlotHolder;
 import org.jboss.errai.demo.client.local.index.IndexPresenter;
 
-@Dependent
+@ApplicationScoped
 public class NavigationPresenter extends Presenter<NavigationPresenter.MyView> implements NavigationUiHandler {
     public interface MyView extends IsView {
     }

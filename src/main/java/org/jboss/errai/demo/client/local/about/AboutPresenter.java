@@ -1,6 +1,6 @@
 package org.jboss.errai.demo.client.local.about;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import org.jboss.errai.bus.client.api.messaging.Message;
@@ -16,7 +16,7 @@ import org.jboss.errai.demo.client.local.common.mvp.slots.SlotHolder;
 import org.jboss.errai.demo.client.local.index.IndexPresenter;
 import org.jboss.errai.demo.client.shared.about.services.PrintService;
 
-@Dependent
+@ApplicationScoped
 public class AboutPresenter extends Presenter<AboutPresenter.MyView> implements AboutUiHandler {
     public interface MyView extends IsView {
         void show(String response);

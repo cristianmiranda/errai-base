@@ -1,6 +1,6 @@
 package org.jboss.errai.demo.client.local.index;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import org.jboss.errai.bus.client.api.messaging.Message;
@@ -13,7 +13,7 @@ import org.jboss.errai.demo.client.local.common.mvp.slots.Slot;
 import org.jboss.errai.demo.client.local.common.mvp.slots.SlotHolder;
 import org.jboss.errai.demo.client.local.navigation.NavigationPresenter;
 
-@Dependent
+@ApplicationScoped
 public class IndexPresenter extends Presenter<IndexPresenter.MyView> implements IndexUiHandler {
     public interface MyView extends IsView {
     }
