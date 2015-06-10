@@ -10,9 +10,11 @@
 package org.jboss.errai.demo.client.local.about;
 
 import org.jboss.errai.common.client.api.Caller;
+import org.jboss.errai.demo.client.local.common.Place;
 import org.jboss.errai.demo.client.local.common.mvp.PresenterTest;
+import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;
+import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
 import org.jboss.errai.demo.client.shared.about.services.PrintService;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -30,22 +32,22 @@ public class AboutPresenterTest extends PresenterTest {
     private AboutPresenter.MyView view;
     @Mock
     private Caller<PrintService> printServiceDelegate;
-
-    @Before
-    public void setUp() {
-        presenter.setView(view);
-    }
+    @Mock
+    private PlaceManager placeManager;
 
     @Test
     public void testingResponse() {
         // given
-        givenSuccess(PrintService.class, printServiceDelegate, "Response");
+        String response = "Response from Server";
+        givenSuccess(PrintService.class, printServiceDelegate, response);
 
         // when
         presenter.print();
 
         // then
-        verify(view).show("About + Response");
-        verify(view).show("About + Response");
+        PlaceRequest placeRequest = new PlaceRequest.Builder().to(Place.INDEX).with("Response", response).build();
+        verify(placeManager).reveal(placeRequest);
+        // verify(view).show("About + Response");
+        // verify(view).show("About + Response");
     }
 }
