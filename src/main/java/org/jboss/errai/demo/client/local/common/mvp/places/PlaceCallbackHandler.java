@@ -9,10 +9,13 @@ import org.jboss.errai.bus.client.api.messaging.MessageCallback;
  */
 public abstract class PlaceCallbackHandler implements MessageCallback {
 
+    protected abstract void reveal();
+
     public abstract void onReveal(Message message);
 
     @Override
     public void callback(Message message) {
+        reveal();
         onReveal(message);
     }
 }

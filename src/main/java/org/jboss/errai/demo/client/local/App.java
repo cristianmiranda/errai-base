@@ -3,9 +3,14 @@ package org.jboss.errai.demo.client.local;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.jboss.errai.demo.client.local.index.IndexPresenter;
 import org.jboss.errai.enterprise.client.jaxrs.api.RestClient;
 import org.jboss.errai.ioc.client.api.EntryPoint;
-import org.slf4j.Logger;
+import org.jboss.errai.ui.nav.client.local.DefaultPage;
+import org.jboss.errai.ui.nav.client.local.Page;
+
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * This is the entry point to the client portion of the web application. At
@@ -16,10 +21,11 @@ import org.slf4j.Logger;
  * {@code @PostConstruct} annotation.
  */
 @EntryPoint
-public class App {
+@Page(role = DefaultPage.class)
+public class App extends Composite {
 
     @Inject
-    private Logger logger;
+    IndexPresenter indexPresenter;
 
     @PostConstruct
     private void init() {
@@ -28,5 +34,8 @@ public class App {
         // demo, this needs to be changed to an absolute URL.
         RestClient.setApplicationRoot("rest");
         // RestClient.setApplicationRoot("http://10.15.16.207:8080/errai-tutorial/rest");
+        RootPanel.get("rootPanel").clear();
+        RootPanel.get("rootPanel").add(indexPresenter);
+        indexPresenter.onReveal(null);
     }
 }

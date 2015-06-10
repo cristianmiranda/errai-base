@@ -10,7 +10,7 @@
 package org.jboss.errai.demo.client.local.about;
 
 import org.jboss.errai.common.client.api.Caller;
-import org.jboss.errai.demo.client.local.common.Places;
+import org.jboss.errai.demo.client.local.common.Place;
 import org.jboss.errai.demo.client.local.common.mvp.PresenterTest;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
@@ -45,7 +45,7 @@ public class AboutPresenterTest extends PresenterTest {
         presenter.print();
 
         // then
-        PlaceRequest placeRequest = new PlaceRequest.Builder().to(Places.INDEX).with("Response", response).build();
+        PlaceRequest placeRequest = new PlaceRequest.Builder().to(Place.INDEX).with("Response", response).build();
         verify(placeManager).reveal(placeRequest);
         // verify(view).show("About + Response");
         // verify(view).show("About + Response");

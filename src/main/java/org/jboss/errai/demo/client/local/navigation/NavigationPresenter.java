@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.client.local.index;
+package org.jboss.errai.demo.client.local.navigation;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
@@ -8,44 +8,49 @@ import org.jboss.errai.demo.client.local.common.Place;
 import org.jboss.errai.demo.client.local.common.mvp.IsView;
 import org.jboss.errai.demo.client.local.common.mvp.Presenter;
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
+import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
 import org.jboss.errai.demo.client.local.common.mvp.slots.RevealType;
-import org.jboss.errai.demo.client.local.common.mvp.slots.Slot;
 import org.jboss.errai.demo.client.local.common.mvp.slots.SlotHolder;
-import org.jboss.errai.demo.client.local.navigation.NavigationPresenter;
+import org.jboss.errai.demo.client.local.index.IndexPresenter;
 
 @Dependent
-public class IndexPresenter extends Presenter<IndexPresenter.MyView> implements IndexUiHandler {
+public class NavigationPresenter extends Presenter<NavigationPresenter.MyView> implements NavigationUiHandler {
     public interface MyView extends IsView {
     }
 
-    public static final Slot SLOT_MENU_BAR = new Slot();
-    public static final Slot SLOT_CONTENT = new Slot();
-
-    private final NavigationPresenter navigationPresenter;
-
     @Inject
-    public IndexPresenter(
-            NavigationPresenter navigationPresenter) {
-        this.navigationPresenter = navigationPresenter;
+    public NavigationPresenter() {
     }
 
     @Override
     public void onReveal(Message message) {
-        setInSlot(SLOT_MENU_BAR, navigationPresenter);
+    }
+
+    @Override
+    public void about() {
+        getPlaceManager().reveal(new PlaceRequest.Builder().to(Place.ABOUT).build());
+    }
+
+    @Override
+    public void services() {
+    }
+
+    @Override
+    public void contact() {
     }
 
     @Override
     protected IsPlace getPlace() {
-        return Place.INDEX;
+        return Place.NAVIGATION;
     }
 
     @Override
     protected RevealType getRevealType() {
-        return RevealType.ROOT;
+        return RevealType.CONTENT;
     }
 
     @Override
     protected SlotHolder revealOnSlot() {
-        return null;
+        return new SlotHolder(Place.INDEX, IndexPresenter.SLOT_MENU_BAR);
     }
 }

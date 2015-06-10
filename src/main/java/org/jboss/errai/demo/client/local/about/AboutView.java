@@ -3,7 +3,6 @@ package org.jboss.errai.demo.client.local.about;
 import javax.inject.Inject;
 
 import org.jboss.errai.demo.client.local.common.mvp.View;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.EventHandler;
@@ -25,7 +24,7 @@ import com.google.gwt.user.client.ui.Button;
  * specified role (DefaultPage.class) make this page appear by default when the
  * application is started.
  */
-@Page(role = DefaultPage.class, path = "About")
+@Page
 @Templated("AboutView.html#root")
 public class AboutView extends View<AboutUiHandler> implements AboutPresenter.MyView {
     @Inject
