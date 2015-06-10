@@ -49,7 +49,7 @@ public class AboutPresenter extends Presenter<AboutPresenter.MyView> implements 
     }
 
     @Override
-    protected IsPlace getPlace() {
+    public IsPlace getPlace() {
         return Place.ABOUT;
     }
 

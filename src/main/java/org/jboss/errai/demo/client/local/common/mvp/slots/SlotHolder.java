@@ -1,21 +1,21 @@
 package org.jboss.errai.demo.client.local.common.mvp.slots;
 
-import org.jboss.errai.demo.client.local.common.Place;
+import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
 
 /**
  * @author Cristian Miranda
  * @since 6/9/15 - 23:42
  */
 public class SlotHolder {
-    private final Place host;
+    private final IsPlace host;
     private final Slot slot;
 
-    public SlotHolder(Place host, Slot slot) {
+    public SlotHolder(IsPlace host, Slot slot) {
         this.host = host;
         this.slot = slot;
     }
 
-    public Place getHost() {
+    public IsPlace getHost() {
         return host;
     }
 

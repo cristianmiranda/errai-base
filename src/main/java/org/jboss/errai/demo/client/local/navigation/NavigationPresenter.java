@@ -40,7 +40,7 @@ public class NavigationPresenter extends Presenter<NavigationPresenter.MyView> i
     }
 
     @Override
-    protected IsPlace getPlace() {
+    public IsPlace getPlace() {
         return Place.NAVIGATION;
     }
 

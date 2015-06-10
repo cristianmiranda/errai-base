@@ -88,7 +88,7 @@ public abstract class Presenter<T extends IsView> extends PlaceCallbackHandler i
         }
     }
 
-    protected abstract IsPlace getPlace();
+    public abstract IsPlace getPlace();
 
     protected abstract RevealType getRevealType();
 
