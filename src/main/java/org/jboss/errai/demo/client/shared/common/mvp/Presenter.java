@@ -1,10 +1,11 @@
-package org.jboss.errai.demo.client.local.common.mvp;
+package org.jboss.errai.demo.client.shared.common.mvp;
 
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 
 import org.jboss.errai.bus.client.api.messaging.Message;
+import org.jboss.errai.demo.client.local.common.mvp.IsView;
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceCallbackHandler;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;

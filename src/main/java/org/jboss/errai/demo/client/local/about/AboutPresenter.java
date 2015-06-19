@@ -8,13 +8,13 @@ import org.jboss.errai.common.client.api.Caller;
 import org.jboss.errai.common.client.api.RemoteCallback;
 import org.jboss.errai.demo.client.local.common.Place;
 import org.jboss.errai.demo.client.local.common.mvp.IsView;
-import org.jboss.errai.demo.client.local.common.mvp.Presenter;
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
 import org.jboss.errai.demo.client.local.common.mvp.slots.RevealType;
 import org.jboss.errai.demo.client.local.common.mvp.slots.SlotHolder;
 import org.jboss.errai.demo.client.local.index.IndexPresenter;
 import org.jboss.errai.demo.client.shared.about.services.PrintService;
+import org.jboss.errai.demo.client.shared.common.mvp.Presenter;
 
 @ApplicationScoped
 public class AboutPresenter extends Presenter<AboutPresenter.MyView> implements AboutUiHandler {

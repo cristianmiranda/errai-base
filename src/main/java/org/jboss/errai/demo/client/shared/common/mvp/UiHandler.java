@@ -1,4 +1,4 @@
-package org.jboss.errai.demo.client.local.common.mvp;
+package org.jboss.errai.demo.client.shared.common.mvp;
 
 /**
  * @author Cristian Miranda

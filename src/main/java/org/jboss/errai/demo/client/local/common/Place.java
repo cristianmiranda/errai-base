@@ -1,10 +1,10 @@
 package org.jboss.errai.demo.client.local.common;
 
 import org.jboss.errai.demo.client.local.about.AboutPresenter;
-import org.jboss.errai.demo.client.local.common.mvp.Presenter;
 import org.jboss.errai.demo.client.local.common.mvp.places.IsPlace;
 import org.jboss.errai.demo.client.local.index.IndexPresenter;
 import org.jboss.errai.demo.client.local.navigation.NavigationPresenter;
+import org.jboss.errai.demo.client.shared.common.mvp.Presenter;
 
 /**
  * @author Cristian Miranda

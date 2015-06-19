@@ -1,6 +1,6 @@
 package org.jboss.errai.demo.client.local.navigation;
 
-import org.jboss.errai.demo.client.local.common.mvp.UiHandler;
+import org.jboss.errai.demo.client.shared.common.mvp.UiHandler;
 
 /**
  * @author Cristian Miranda

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.jboss.errai.demo.client.local.common.mvp.places.EntryPlace;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceManager;
 import org.jboss.errai.demo.client.local.common.mvp.places.PlaceRequest;
+import org.jboss.errai.demo.client.shared.common.mvp.Presenter;
 import org.jboss.errai.ioc.client.api.EntryPoint;
 import org.jboss.errai.ioc.client.container.IOCBeanDef;
 import org.jboss.errai.ioc.client.container.SyncBeanManager;

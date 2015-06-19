@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import org.jboss.errai.bus.client.ErraiBus;
 import org.jboss.errai.bus.client.api.base.MessageBuilder;
 import org.jboss.errai.bus.client.api.messaging.MessageBus;
-import org.jboss.errai.demo.client.local.common.mvp.Presenter;
+import org.jboss.errai.demo.client.shared.common.mvp.Presenter;
 import org.jboss.errai.ioc.client.container.IOCBeanDef;
 import org.jboss.errai.ioc.client.container.SyncBeanManager;
 

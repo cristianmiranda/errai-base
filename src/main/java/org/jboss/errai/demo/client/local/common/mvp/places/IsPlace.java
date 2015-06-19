@@ -1,6 +1,6 @@
 package org.jboss.errai.demo.client.local.common.mvp.places;
 
-import org.jboss.errai.demo.client.local.common.mvp.Presenter;
+import org.jboss.errai.demo.client.shared.common.mvp.Presenter;
 
 /**
  * @author Cristian Miranda

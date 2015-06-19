@@ -3,6 +3,7 @@ package org.jboss.errai.demo.client.local.common.mvp;
 import javax.inject.Inject;
 
 import org.jboss.errai.demo.client.local.common.mvp.slots.Slot;
+import org.jboss.errai.demo.client.shared.common.mvp.UiHandler;
 
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.IsWidget;
