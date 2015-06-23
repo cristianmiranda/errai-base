@@ -1,3 +1,9 @@
+Run Configurations
+=====================
+**VM options:** -Xmx2048m -XX:MaxPermSize=512M -Derrai.jboss.home=/Users/cristianmiranda/Documents/Work/Applications/wildfly-8.1.0.Final/
+
+**Dev Mode parameters:** -server org.jboss.errai.cdi.server.gwt.EmbeddedWildFlyLauncher
+
 Errai Getting Started Demo
 =====================
 
